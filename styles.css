@@ -1,0 +1,186 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  
+  body {
+    background: linear-gradient(to bottom, #f0f4f8, #ffffff);
+    color: #333;
+    overflow-x: hidden;
+  }
+  
+  .hero {
+    position: relative;
+    height: 100vh;
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.7)),
+                url('https://images.unsplash.com/photo-1503264116251-35a269479413') center/cover no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+  }
+  
+  .overlay {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+  }
+  
+  .hero-content {
+    position: relative;
+    z-index: 1;
+  }
+  
+  .hero h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+  }
+  
+  .hero p {
+    font-size: 1.3rem;
+    margin-bottom: 20px;
+  }
+  
+  .btn {
+    display: inline-block;
+    padding: 12px 25px;
+    background: #a05eac;
+    color: white;
+    border: none;
+    border-radius: 50px;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: background 0.3s ease, transform 0.3s ease;
+    cursor: pointer;
+  }
+  
+  .btn:hover {
+    background: #8c4d98;
+    transform: scale(1.05);
+  }
+  
+  .about, .donate, .condolences {
+    padding: 60px 20px;
+    max-width: 900px;
+    margin: auto;
+    text-align: center;
+  }
+  
+  h2 {
+    margin-bottom: 30px;
+    color: #a05eac;
+    font-size: 2rem;
+  }
+  
+  .card {
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    overflow: hidden;
+    text-align: left;
+  }
+  
+  .card img {
+    width: 100%;
+    height: auto;
+  }
+  
+  .card p {
+    padding: 20px;
+    font-size: 1.1rem;
+    color: #555;
+  }
+  
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 20px;
+  }
+  
+  form input {
+    padding: 12px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+  }
+  
+  form button {
+    align-self: center;
+  }
+  
+  .hidden {
+    display: none;
+    color: green;
+    margin-top: 20px;
+    font-size: 1.2rem;
+  }
+  
+  footer {
+    text-align: center;
+    padding: 20px;
+    background: #333;
+    color: white;
+    margin-top: 30px;
+  }
+  
+  .messages {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    text-align: center;
+  }
+  
+  .message {
+    background: #f7f0fa;
+    padding: 15px;
+    border-left: 5px solid #a05eac;
+    border-radius: 8px;
+    font-style: italic;
+  }
+  
+  /* Анимации */
+  .fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeIn 1s forwards;
+  }
+  
+  .delay-1 {
+    animation-delay: 0.5s;
+  }
+  .delay-2 {
+    animation-delay: 1s;
+  }
+  
+  @keyframes fadeIn {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Плавающие звёзды */
+  .floating-stars::before, .floating-stars::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: url('https://upload.wikimedia.org/wikipedia/commons/thumb/5/50/White_star.svg/1024px-White_star.svg.png') repeat;
+    opacity: 0.2;
+    animation: floatStars 50s linear infinite;
+  }
+  
+  .floating-stars::after {
+    animation-direction: reverse;
+    opacity: 0.1;
+  }
+  
+  @keyframes floatStars {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-100%); }
+  }
+  
